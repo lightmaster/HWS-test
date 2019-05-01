@@ -8,6 +8,19 @@
 #   https://www.weather34.com                                                                      #
 ####################################################################################################
 //original weather34 script original css/svg/php by weather34 2015-2019 clearly marked as original by weather34//
+
+$checkgit = `git ls-files ./jsondata/\*.txt`;
+if ($checkgit) {
+  `git rm --cached --ignore-unmatch --quiet ./jsondata/\*.txt`;
+  //$checkgit = `git ls-files ./jsondata/\*.txt`;
+  //echo 'contents of checkgit is: '.$checkgit.'<br/><br/>';
+} else {
+  //echo 'nothing in checkgit';
+}
+
+//$test = `git rm --cached --ignore-unmatch --quiet jsondata/\*.txt`;
+
+//die();
 include_once('livedata.php');include_once('common.php');include_once('settings1.php'); date_default_timezone_set($TZ);?>
 <!DOCTYPE html>
 <html>
